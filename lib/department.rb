@@ -12,4 +12,6 @@ class Department
   def hire(employee)
     employees << employee
   end
+
+  
 end
