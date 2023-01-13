@@ -23,6 +23,6 @@ RSpec.describe Department do
     customer_service.hire(bobbi)
     customer_service.hire(aaron)    
 
-      expect(customer_service.employees).to match_array(bobbi, aaron)  
+      expect(customer_service.employees).to match_array([bobbi, aaron])  
   end
 end
