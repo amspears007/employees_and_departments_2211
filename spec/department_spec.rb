@@ -25,4 +25,10 @@ RSpec.describe Department do
 
       expect(customer_service.employees).to match_array([bobbi, aaron])  
   end
+
+  it 'starts with no expenses, but can be added' do
+    customer_service = Department.new("Customer Service")
+
+    expect(customer_service.expenses).to eq(0)
+  end
 end
