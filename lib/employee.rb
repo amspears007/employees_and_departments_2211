@@ -5,7 +5,7 @@ class Employee
 
   def initialize(info)
     @name = info[:name]
-    @age = info[:age]
-    @salary = info[:salary]
+    @age = info[:age].to_i
+    @salary = info[:salary].delete('$').to_i
   end
 end
