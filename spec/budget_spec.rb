@@ -52,4 +52,33 @@ RSpec.describe Budget do
 
     expect(budget2021.expenses_less_than_500).to match_array([customer_service, human_resources])
   end
+
+  it 'can list employees salaries' do
+    budget2021 = Budget.new("2021")
+
+    customer_service = Department.new("Customer Service") 
+    human_resources = Department.new("Human Resources")
+    it = Department.new("IT")
+
+    budget2021.add_department(customer_service)
+    budget2021.add_department(human_resources)
+    budget2021.add_department(it)
+
+    customer_service.expense(150)
+    human_resources.expense(100)
+    it.expense(550)
+
+    bobbi = Employee.new({name: "Bobbi Jaeger", age: "30", salary: "100000"})
+    aaron = Employee.new({name: "Aaron Tanaka", age: "25", salary: "90000"}) 
+
+    customer_service.hire(bobbi)
+    customer_service.hire(aaron)
+
+    expect(budget2021.employees_salaries).to eq({
+
+      bobbi => 100000,
+      aaron => 90000
+    })
+
+  end
 end
