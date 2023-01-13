@@ -76,8 +76,8 @@ RSpec.describe Budget do
 
     expect(budget2021.employees_salaries).to eq({
 
-      bobbi => 100000,
-      aaron => 90000
+      "Bobbi Jaeger" => 100000,
+      "Aaron Tanaka" => 90000
     })
 
   end

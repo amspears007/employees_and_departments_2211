@@ -15,4 +15,15 @@ class Budget
       department.expenses < 500 
     end
   end
+
+  def employees_salaries
+    salary_hash = {}
+    @departments.each do |department|
+      department.employees.each do |employee|
+        salary_hash[employee.name] = employee.salary
+      end
+      salary_hash
+    end
+  
+  end
 end
